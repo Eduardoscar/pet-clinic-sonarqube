@@ -37,11 +37,7 @@ pipeline {
 
         stage ("Quality Gate Check"){
             steps {
-                def qualitygate = waitForQualityGate()
-                if (qualitygate.status != "OK") {
-                    error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
-                    abortPipeline: true
-                    } 
+                waitForQualityGate abortPipeline: true
             }
         }
         
