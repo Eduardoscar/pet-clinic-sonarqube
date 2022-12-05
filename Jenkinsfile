@@ -30,7 +30,7 @@ pipeline {
             steps {
                echo 'Executing Sonar analisis' 
                withSonarQubeEnv('sonarqube') {
-                sh 'mvn package sonar:sonar'
+                sh 'mvn clean package sonar:sonar'
               }
             }
         }
