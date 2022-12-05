@@ -34,6 +34,13 @@ pipeline {
               }
             }
         }
+
+        stage ("Quality Gate Check"){
+            steps {
+                sleep 60
+                waitForQualityGate abortPipeline: true
+            }
+        }
         
         stage('Deploy') {
             steps {
