@@ -38,7 +38,7 @@ pipeline {
                         fi
                     done
                     docker build -t alpine-petclinic -f Dockerfile.deploy .
-                    docker run --name alpine-petclinic --rm -d -p 9966:8080 alpine-petclinic 
+                    docker run --name alpine-petclinic --rm -d -p 9966:8081 alpine-petclinic 
                 '''
             }
         }
